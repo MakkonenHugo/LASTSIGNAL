@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5664976460399008391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2581103
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95879
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.4124
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.87
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.7029
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.96699667
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.25478888
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 29.522
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357118449180629203, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      propertyPath: m_Name
+      value: Jeff2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2540343335673614733}
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: 13d29981fb644484a82297f60397735b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5085576408501705621}
+  m_SourcePrefab: {fileID: 8686905464242370237, guid: 13d29981fb644484a82297f60397735b, type: 3}
+--- !u!1 &8280310156709724756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: 13d29981fb644484a82297f60397735b, type: 3}
+  m_PrefabInstance: {fileID: 5664976460399008391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2540343335673614733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280310156709724756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &5085576408501705621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280310156709724756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to inspect
+  message: Its Jeff...
+  radioEvent: {fileID: 0}
+  doorController: {fileID: 0}

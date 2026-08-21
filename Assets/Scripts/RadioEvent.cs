@@ -1,23 +1,25 @@
 using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class RadioEvent : MonoBehaviour
 {
     public DialogueUI dialogueUI;
     public InteractionDetector interactionDetector;
-
+    [Header("Radio Messages")]
+    public List<string> messages = new List<string>();
+    [Header("Optional Events")]
     public GameObject jeff;
     public Collider doorCollider;
-
+    public DoorController doorController;
+    [Header("Timing")]
+    public float delayBetweenMessages = 0.3f;
     private Interaction interaction;
     private bool hasPlayed = false;
     private bool playing = false;
-
     void Start()
     {
         interaction = GetComponent<Interaction>();
     }
-
     public void PlayRadio()
     {
         if (hasPlayed || playing)
@@ -25,58 +27,49 @@ public class RadioEvent : MonoBehaviour
 
         hasPlayed = true;
         playing = true;
-
         if (interaction != null)
         {
             interaction.enabled = false;
         }
-
         if (interactionDetector != null)
         {
             interactionDetector.HidePrompt();
         }
-
-        StartCoroutine(StartRadio());
+        StartCoroutine(PlayMessages());
     }
-
-    IEnumerator StartRadio()
+    IEnumerator PlayMessages()
     {
         yield return null;
 
-        dialogueUI.ShowMessage("It's not plugged in...");
+        if (dialogueUI == null)
+        {
+            playing = false;
+            yield break;
+        }
 
-        yield return new WaitUntil(() => !dialogueUI.IsShowing);
+        foreach (string message in messages)
+        {
+            if (string.IsNullOrEmpty(message))
+                continue;
 
-        yield return new WaitForSeconds(0.3f);
-
-        dialogueUI.ShowMessage("HELLOOO!! Is anyone getting this signal?");
-
-        yield return new WaitUntil(() => !dialogueUI.IsShowing);
-
-        yield return new WaitForSeconds(0.1f);
-
-        dialogueUI.ShowMessage("If you are in a gray room, GET OUT OF THERE!!");
-
-        yield return new WaitUntil(() => !dialogueUI.IsShowing);
-
-        yield return new WaitForSeconds(0.1f);
-
-        dialogueUI.ShowMessage("The door should be unlocked!");
-
-        yield return new WaitUntil(() => !dialogueUI.IsShowing);
-
-        yield return new WaitForSeconds(0.5f);
+            dialogueUI.ShowMessage(message);
+            yield return new WaitUntil(() => !dialogueUI.IsShowing);
+            yield return new WaitForSeconds(delayBetweenMessages);
+        }
 
         if (jeff != null)
         {
             jeff.SetActive(false);
         }
-
         if (doorCollider != null)
         {
             doorCollider.enabled = false;
         }
-
+        if (doorController != null)
+        {
+            doorController.enabled = true;
+            doorController.UnlockDoor();
+        }
         playing = false;
     }
 }

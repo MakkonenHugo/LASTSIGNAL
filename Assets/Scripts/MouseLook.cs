@@ -1,45 +1,47 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class MouseLook : MonoBehaviour
 {
     public float sensitivity = 2f;
-
-    float xRotation = 0f;
-
+    private float xRotation = 0f;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        xRotation = transform.localEulerAngles.x;
+        if (xRotation > 180f)
+            xRotation -= 360f;
     }
-
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current != null &&
+            Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-
         if (Cursor.lockState != CursorLockMode.Locked)
             return;
-
-        Vector2 mouse = Mouse.current.delta.ReadValue();
-
-        float mouseX = mouse.x * sensitivity * Time.deltaTime;
-        float mouseY = mouse.y * sensitivity * Time.deltaTime;
-
+        if (Mouse.current == null)
+            return;
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+        float mouseX = mouseDelta.x * sensitivity * 0.1f;
+        float mouseY = mouseDelta.y * sensitivity * 0.1f;
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        transform.parent.Rotate(Vector3.up * mouseX);
+        if (transform.parent != null)
+        {
+            transform.parent.Rotate(
+                Vector3.up * mouseX,
+                Space.World
+            );
+        }
     }
 }

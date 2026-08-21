@@ -5,79 +5,75 @@ using TMPro;
 public class InteractionDetector : MonoBehaviour
 {
     public float interactionDistance = 3f;
-    public TextMeshProUGUI interactionPrompt;
+
+    public GameObject interactionPrompt;
+    public TMP_Text promptText;
 
     private Camera playerCamera;
     private Interaction currentInteraction;
 
-    void Start()
+    void Awake()
     {
+        // Koska tämä scripti on kamerassa,
+        // otetaan kamera automaattisesti tästä objektista.
         playerCamera = GetComponent<Camera>();
 
         if (interactionPrompt != null)
-        {
-            interactionPrompt.gameObject.SetActive(false);
-        }
+            interactionPrompt.SetActive(false);
     }
 
     void Update()
     {
-        DetectInteraction();
+        if (playerCamera == null)
+            return;
 
-        if (currentInteraction != null &&
-            Keyboard.current != null &&
-            Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            Interaction interaction = currentInteraction;
-
-            currentInteraction = null;
-
-            if (interactionPrompt != null)
-            {
-                interactionPrompt.gameObject.SetActive(false);
-            }
-
-            interaction.Interact();
-        }
-    }
-
-    void DetectInteraction()
-    {
         Ray ray = new Ray(
             playerCamera.transform.position,
             playerCamera.transform.forward
         );
 
+        RaycastHit hit;
+
         Interaction detectedInteraction = null;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+        if (Physics.Raycast(ray, out hit, interactionDistance))
         {
-            detectedInteraction = hit.collider.GetComponent<Interaction>();
+            Interaction interaction =
+                hit.collider.GetComponentInParent<Interaction>();
 
-            if (detectedInteraction == null)
+            if (interaction != null && interaction.enabled)
             {
-                detectedInteraction = hit.collider.GetComponentInParent<Interaction>();
+                detectedInteraction = interaction;
             }
         }
 
-        if (detectedInteraction == currentInteraction)
+        if (detectedInteraction != currentInteraction)
         {
-            return;
-        }
+            currentInteraction = detectedInteraction;
 
-        currentInteraction = detectedInteraction;
-
-        if (interactionPrompt != null)
-        {
             if (currentInteraction != null)
             {
-                interactionPrompt.text = currentInteraction.interactionText;
-                interactionPrompt.gameObject.SetActive(true);
+                if (interactionPrompt != null)
+                    interactionPrompt.SetActive(true);
+
+                if (promptText != null)
+                    promptText.text =
+                        currentInteraction.interactionText;
             }
             else
             {
-                interactionPrompt.gameObject.SetActive(false);
+                if (interactionPrompt != null)
+                    interactionPrompt.SetActive(false);
             }
+        }
+
+        if (currentInteraction != null)
+        {
+            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+{
+    Debug.Log("E PAINETTU!");
+    currentInteraction.Interact();
+}
         }
     }
 
@@ -86,8 +82,6 @@ public class InteractionDetector : MonoBehaviour
         currentInteraction = null;
 
         if (interactionPrompt != null)
-        {
-            interactionPrompt.gameObject.SetActive(false);
-        }
+            interactionPrompt.SetActive(false);
     }
 }
