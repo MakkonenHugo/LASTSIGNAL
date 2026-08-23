@@ -12,35 +12,23 @@ public class DoorController : MonoBehaviour
 
     public void UnlockDoor()
     {
-        Debug.Log("[DoorController] UnlockDoor() kutsuttu objektilla: " + gameObject.name);
         isUnlocked = true;
     }
 
     public void OpenDoor()
     {
-        Debug.Log("[DoorController] OpenDoor() kutsuttu objektilla: " + gameObject.name +
-            " | isUnlocked=" + isUnlocked + " isOpen=" + isOpen + " isMoving=" + isMoving);
-
         if (!isUnlocked)
-        {
-            Debug.Log("[DoorController] Keskeytetaan: ovi ei ole unlocked");
             return;
-        }
 
         if (isMoving)
-        {
-            Debug.Log("[DoorController] Keskeytetaan: ovi on jo liikkeessa");
             return;
-        }
 
         if (isOpen)
         {
-            Debug.Log("[DoorController] Suljetaan ovi");
             StartCoroutine(Close());
         }
         else
         {
-            Debug.Log("[DoorController] Avataan ovi");
             StartCoroutine(Open());
         }
     }
@@ -71,7 +59,6 @@ public class DoorController : MonoBehaviour
 
         isOpen = true;
         isMoving = false;
-        Debug.Log("[DoorController] Ovi auki");
     }
 
     IEnumerator Close()
@@ -100,6 +87,5 @@ public class DoorController : MonoBehaviour
 
         isOpen = false;
         isMoving = false;
-        Debug.Log("[DoorController] Ovi kiinni");
     }
 }

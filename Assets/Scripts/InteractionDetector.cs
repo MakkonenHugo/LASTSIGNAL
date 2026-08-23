@@ -71,7 +71,7 @@ public class InteractionDetector : MonoBehaviour
         {
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
 {
-    Debug.Log("E PAINETTU!");
+    Debug.Log("Why you lookin here bru");
     currentInteraction.Interact();
 }
         }
