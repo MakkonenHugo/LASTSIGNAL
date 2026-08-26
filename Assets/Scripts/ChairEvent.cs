@@ -17,10 +17,11 @@ public class ChairEvent : MonoBehaviour
 
     [Header("Dialogue")]
     public DialogueUI dialogueUI;
+    public string firstMessage = "Huh...";
+    public string secondMessage = "Something feels wrong about this chair.";
 
-    private bool eventStarted = false;
+    private bool eventInProgress = false;
     private bool waitingForPlayerToLookAway = false;
-    private bool moved = false;
 
     private Interaction interaction;
 
@@ -34,10 +35,10 @@ public class ChairEvent : MonoBehaviour
 
     public void StartChairEvent()
     {
-        if (eventStarted || moved)
+        if (eventInProgress)
             return;
 
-        eventStarted = true;
+        eventInProgress = true;
 
         if (interaction != null)
             interaction.enabled = false;
@@ -47,21 +48,22 @@ public class ChairEvent : MonoBehaviour
 
     IEnumerator ChairSequence()
     {
-        // Ensimmäinen dialogi
         if (dialogueUI != null)
         {
-            dialogueUI.ShowMessage("Huh...");
+            if (!string.IsNullOrEmpty(firstMessage))
+            {
+                dialogueUI.ShowMessage(firstMessage);
+                yield return new WaitUntil(() => !dialogueUI.IsShowing);
+                yield return new WaitForSeconds(0.2f);
+            }
 
-            yield return new WaitUntil(() => !dialogueUI.IsShowing);
-
-            yield return new WaitForSeconds(0.2f);
-
-            dialogueUI.ShowMessage("Something feels wrong about this chair.");
-
-            yield return new WaitUntil(() => !dialogueUI.IsShowing);
+            if (!string.IsNullOrEmpty(secondMessage))
+            {
+                dialogueUI.ShowMessage(secondMessage);
+                yield return new WaitUntil(() => !dialogueUI.IsShowing);
+            }
         }
 
-        // Nyt odotetaan että pelaaja KATSOO POIS
         waitingForPlayerToLookAway = true;
 
         while (waitingForPlayerToLookAway)
@@ -74,22 +76,19 @@ public class ChairEvent : MonoBehaviour
             yield return null;
         }
 
-        // Pieni viive, jotta teleportti ei tunnu välittömältä
         yield return new WaitForSeconds(moveDelay);
 
         MoveChair();
 
-        moved = true;
-    }
-void FinishInteraction()
-{
-    Interaction interaction = GetComponent<Interaction>();
+        eventInProgress = false;
 
-    if (interaction != null)
-    {
-        interaction.FinishInteraction();
+        if (interaction != null)
+        {
+            interaction.enabled = true;
+            interaction.FinishInteraction();
+        }
     }
-}
+
     bool PlayerIsLookingAway()
     {
         if (playerCamera == null)
@@ -115,7 +114,6 @@ void FinishInteraction()
             position3
         };
 
-        // Valitaan satunnainen paikka
         Transform selectedPosition = null;
 
         for (int i = 0; i < 20; i++)
@@ -126,14 +124,12 @@ void FinishInteraction()
             if (candidate == null)
                 continue;
 
-            // Ei nykyiseen paikkaan
             if (Vector3.Distance(
                 transform.position,
                 candidate.position
             ) < 0.1f)
                 continue;
 
-            // Varmistetaan että pelaaja EI katso sinne
             Vector3 direction =
                 candidate.position -
                 playerCamera.transform.position;
@@ -150,7 +146,6 @@ void FinishInteraction()
             break;
         }
 
-        
         if (selectedPosition == null)
         {
             foreach (Transform candidate in positions)
@@ -174,7 +169,5 @@ void FinishInteraction()
 
         transform.position = selectedPosition.position;
         transform.rotation = selectedPosition.rotation;
-
-        Debug.Log("CHAIR MOVED!");
     }
 }

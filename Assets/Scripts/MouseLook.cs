@@ -14,18 +14,6 @@ public class MouseLook : MonoBehaviour
     }
     void Update()
     {
-        if (Keyboard.current != null &&
-            Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        if (Mouse.current != null &&
-            Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
         if (Cursor.lockState != CursorLockMode.Locked)
             return;
         if (Mouse.current == null)

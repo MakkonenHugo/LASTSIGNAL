@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Interaction : MonoBehaviour
 {
     [Header("Interaction")]
-    public string interactionText = "Press E to inspect";
+    public string interactionText = "";
 
     [Header("Dialogue")]
     public List<string> messages = new List<string>();
