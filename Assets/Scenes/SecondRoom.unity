@@ -1006,27 +1006,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: messages.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Huff, puff
+      value: CRRRRRZZZZZZZ-
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: That was an close one...
+      value: Huff, puff, phew that was close...
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: IF YOU ARE STILL LISTENING
+      value: HEY LISTENER!!
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: 'messages.Array.data[3]'
-      value: DONT TRUST JEFF
+      value: DONT. TRUST. JEFF.
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: 'messages.Array.data[4]'
       value: Oh no...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
+      propertyPath: 'messages.Array.data[5]'
+      value: CRRRRRZZZZZZZ-
       objectReference: {fileID: 0}
     - target: {fileID: 8091785296816958522, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: jeff
@@ -1098,7 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739c25cd5ecaf05429b6b10b61c9076b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioEvent
-  dialogueUI: {fileID: 0}
+  dialogueUI: {fileID: 1170638092}
   interactionDetector: {fileID: 424181733}
   messages:
   - CRRRRRZZZZZZZ-
@@ -1129,6 +1133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseLook
   sensitivity: 0.5
+  smoothing: 18
+  maxDeltaPerFrame: 60
 --- !u!114 &424181733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,7 +1236,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 3, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &524931206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1497,7 @@ Transform:
   m_GameObject: {fileID: 620330212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.8, y: 3.06, z: 2.56}
+  m_LocalPosition: {x: 41.8, y: 1.19, z: 2.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3045,6 +3051,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6259454084783256429, guid: 19280cbe69e99d24585e784d8d7eb2ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864097977}
     - targetCorrespondingSourceObject: {fileID: 5598387749334836220, guid: 19280cbe69e99d24585e784d8d7eb2ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 12823955}
@@ -3780,6 +3789,64 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1864097975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6259454084783256429, guid: 19280cbe69e99d24585e784d8d7eb2ba, type: 3}
+  m_PrefabInstance: {fileID: 1431145093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1864097977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864097975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7854fbd0f2fe5a41b778d851ebf12f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueBoxVisuals
+  background: {fileID: 1864097978}
+  backgroundColor: {r: 0.07, g: 0.08, b: 0.1, a: 0.92}
+  openDuration: 0.25
+  closeDuration: 0.18
+  openCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  startScaleY: 0.85
+  startOffset: {x: 0, y: -12}
+--- !u!114 &1864097978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3851559671580838939, guid: 19280cbe69e99d24585e784d8d7eb2ba, type: 3}
+  m_PrefabInstance: {fileID: 1431145093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864097975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1866108190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7417395076478836871, guid: 0588c2dc530d5f642b72270aa6232b7e, type: 3}
@@ -4508,10 +4575,10 @@ SceneRoots:
   - {fileID: 678656673}
   - {fileID: 1431145093}
   - {fileID: 1888859429}
+  - {fileID: 622236762}
   - {fileID: 2107355679}
   - {fileID: 331352587}
   - {fileID: 2130550325}
-  - {fileID: 622236762}
   - {fileID: 1946855349}
   - {fileID: 118315942}
   - {fileID: 1082353279}

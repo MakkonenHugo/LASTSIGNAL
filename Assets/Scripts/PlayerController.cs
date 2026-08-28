@@ -4,10 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
+    public float acceleration = 12f;
+    public float deceleration = 8f;
+    public float airControlMultiplier = 0.4f;
     public float gravity = -15f;
 
     private CharacterController controller;
     private Vector3 velocity;
+    private Vector3 horizontalVelocity;
 
     void Start()
     {
@@ -35,13 +39,23 @@ public class PlayerController : MonoBehaviour
 
         input = Vector2.ClampMagnitude(input, 1f);
 
-        Vector3 move =
+        Vector3 wishDirection =
             transform.right * input.x +
             transform.forward * input.y;
 
-        controller.Move(move * speed * Time.deltaTime);
+        Vector3 wishVelocity = wishDirection * speed;
 
-        if (controller.isGrounded && velocity.y < 0)
+        bool grounded = controller.isGrounded;
+        float rate = wishVelocity.sqrMagnitude > 0.01f ? acceleration : deceleration;
+
+        if (!grounded)
+            rate *= airControlMultiplier;
+
+        horizontalVelocity = Vector3.MoveTowards(horizontalVelocity, wishVelocity, rate * Time.deltaTime);
+
+        controller.Move(horizontalVelocity * Time.deltaTime);
+
+        if (grounded && velocity.y < 0)
             velocity.y = -2f;
 
         velocity.y += gravity * Time.deltaTime;
