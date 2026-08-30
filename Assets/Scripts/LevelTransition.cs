@@ -4,14 +4,17 @@ using System.Collections;
 
 public class LevelTransition : MonoBehaviour
 {
-    public string nextSceneName = "Level2";
+    public string targetSceneName = "Level kääknagen on paras ou ou ou äää Hugsa mugsa jne HEHEH";
+    public string playerTag = "Player";
 
+    [Header("Lost Signal Screen ")]
+    public bool useLostSignalScreen = false;
     public GameObject lostSignalScreen;
-
-    public AudioSource transitionSound;
-
     public float delayBeforeScreen = 1.5f;
-    public float delayBeforeLevel2 = 3f;
+    public float delayBeforeLevel = 3f;
+
+    [Header("Soundrh")]
+    public AudioSource transitionSound;
 
     private bool triggered = false;
 
@@ -20,8 +23,20 @@ public class LevelTransition : MonoBehaviour
         if (triggered)
             return;
 
-        if (!other.CompareTag("Player"))
+        if (!other.transform.root.CompareTag(playerTag))
             return;
+
+        if (string.IsNullOrEmpty(targetSceneName))
+        {
+            Debug.LogWarning("LevelTransition: targetSceneName on tyhja objektilla " + gameObject.name);
+            return;
+        }
+
+        if (!Application.CanStreamedLevelBeLoaded(targetSceneName))
+        {
+            Debug.LogError("LevelTransition: scenea '" + targetSceneName + "' ei loydy Build Settingsista.");
+            return;
+        }
 
         triggered = true;
 
@@ -30,24 +45,27 @@ public class LevelTransition : MonoBehaviour
 
     IEnumerator Transition()
     {
-       
-        yield return new WaitForSeconds(delayBeforeScreen);
+        if (useLostSignalScreen)
+        {
+            yield return new WaitForSeconds(delayBeforeScreen);
 
-        
-        if (transitionSound != null)
+            if (transitionSound != null)
+            {
+                transitionSound.Play();
+            }
+
+            if (lostSignalScreen != null)
+            {
+                lostSignalScreen.SetActive(true);
+            }
+
+            yield return new WaitForSeconds(delayBeforeLevel);
+        }
+        else if (transitionSound != null)
         {
             transitionSound.Play();
         }
 
-        
-        if (lostSignalScreen != null)
-        {
-            lostSignalScreen.SetActive(true);
-        }
-
-        // Odotetaan ennen Level 2:ta
-        yield return new WaitForSeconds(delayBeforeLevel2);
-
-        SceneManager.LoadScene(nextSceneName);
+        SceneManager.LoadScene(targetSceneName);
     }
 }

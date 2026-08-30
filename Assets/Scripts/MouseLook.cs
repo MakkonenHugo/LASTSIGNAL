@@ -4,19 +4,23 @@ using UnityEngine.InputSystem;
 public class MouseLook : MonoBehaviour
 {
     public float sensitivity = 2f;
-    public float smoothing = 18f;
     public float maxDeltaPerFrame = 20f;
+    public int smoothingFrameCount = 3;
 
     private float xRotation = 0f;
-    private Vector2 currentMouseDelta;
-    private Vector2 targetMouseDelta;
     private bool firstFrameSkipped = false;
+
+    private Vector2[] deltaHistory;
+    private int historyIndex = 0;
+    private int historyFilled = 0;
 
     void Awake()
     {
         xRotation = transform.localEulerAngles.x;
         if (xRotation > 180f)
             xRotation -= 360f;
+
+        deltaHistory = new Vector2[Mathf.Max(1, smoothingFrameCount)];
     }
 
     void Start()
@@ -24,9 +28,12 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        currentMouseDelta = Vector2.zero;
-        targetMouseDelta = Vector2.zero;
         firstFrameSkipped = false;
+        historyIndex = 0;
+        historyFilled = 0;
+
+        for (int i = 0; i < deltaHistory.Length; i++)
+            deltaHistory[i] = Vector2.zero;
     }
 
     void Update()
@@ -45,12 +52,19 @@ public class MouseLook : MonoBehaviour
             return;
         }
 
-        targetMouseDelta = Vector2.ClampMagnitude(rawDelta, maxDeltaPerFrame);
+        rawDelta = Vector2.ClampMagnitude(rawDelta, maxDeltaPerFrame);
 
-        currentMouseDelta = Vector2.Lerp(currentMouseDelta, targetMouseDelta, Time.deltaTime * smoothing);
+        deltaHistory[historyIndex] = rawDelta;
+        historyIndex = (historyIndex + 1) % deltaHistory.Length;
+        historyFilled = Mathf.Min(historyFilled + 1, deltaHistory.Length);
 
-        float mouseX = currentMouseDelta.x * sensitivity * 0.1f;
-        float mouseY = currentMouseDelta.y * sensitivity * 0.1f;
+        Vector2 averagedDelta = Vector2.zero;
+        for (int i = 0; i < historyFilled; i++)
+            averagedDelta += deltaHistory[i];
+        averagedDelta /= historyFilled;
+
+        float mouseX = averagedDelta.x * sensitivity * 0.1f;
+        float mouseY = averagedDelta.y * sensitivity * 0.1f;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

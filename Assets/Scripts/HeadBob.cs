@@ -7,15 +7,17 @@ public class HeadBob : MonoBehaviour
     public float bobAmount = 0.025f;
     public float sideBobAmount = 0.012f;
     public float smoothness = 10f;
-    public float jitter = 0.15f;
+    public float blendSpeed = 6f;
 
     private Vector3 startPosition;
     private float timer;
-    private float currentJitter;
+    private float moveBlend;
 
     void Start()
     {
         startPosition = transform.localPosition;
+        timer = 0f;
+        moveBlend = 0f;
     }
 
     void Update()
@@ -31,33 +33,19 @@ public class HeadBob : MonoBehaviour
                 Keyboard.current.dKey.isPressed;
         }
 
-        if (isMoving)
-        {
-            timer += Time.deltaTime * bobFrequency;
-            currentJitter = Mathf.Lerp(currentJitter, Random.Range(-jitter, jitter), Time.deltaTime * 5f);
+        moveBlend = Mathf.MoveTowards(moveBlend, isMoving ? 1f : 0f, Time.deltaTime * blendSpeed);
 
-            float bobY = Mathf.Sin(timer) * bobAmount;
-            float bobX = Mathf.Cos(timer * 0.5f) * sideBobAmount;
+        timer += Time.deltaTime * bobFrequency;
 
-            Vector3 targetPosition = startPosition;
-            targetPosition.y += bobY;
-            targetPosition.x += bobX + (currentJitter * bobAmount * 0.1f);
+        float bobY = Mathf.Sin(timer) * bobAmount * moveBlend;
+        float bobX = Mathf.Cos(timer * 0.5f) * sideBobAmount * moveBlend;
 
-            transform.localPosition = Vector3.Lerp(
-                transform.localPosition,
-                targetPosition,
-                Time.deltaTime * smoothness
-            );
-        }
-        else
-        {
-            timer = 0f;
+        Vector3 targetPosition = startPosition + new Vector3(bobX, bobY, 0f);
 
-            transform.localPosition = Vector3.Lerp(
-                transform.localPosition,
-                startPosition,
-                Time.deltaTime * smoothness
-            );
-        }
+        transform.localPosition = Vector3.Lerp(
+            transform.localPosition,
+            targetPosition,
+            Time.deltaTime * smoothness
+        );
     }
 }

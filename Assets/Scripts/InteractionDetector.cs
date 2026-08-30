@@ -5,17 +5,17 @@ using TMPro;
 public class InteractionDetector : MonoBehaviour
 {
     public float interactionDistance = 3f;
+    public int loseTargetFrameThreshold = 5;
 
     public GameObject interactionPrompt;
     public TMP_Text promptText;
 
     private Camera playerCamera;
     private Interaction currentInteraction;
+    private int framesWithoutTarget = 0;
 
     void Awake()
     {
-        // Koska tämä scripti on kamerassa,
-        // otetaan kamera automaattisesti tästä objektista.
         playerCamera = GetComponent<Camera>();
 
         if (interactionPrompt != null)
@@ -47,21 +47,29 @@ public class InteractionDetector : MonoBehaviour
             }
         }
 
-        if (detectedInteraction != currentInteraction)
+        if (detectedInteraction != null)
         {
-            currentInteraction = detectedInteraction;
+            framesWithoutTarget = 0;
 
-            if (currentInteraction != null)
+            if (detectedInteraction != currentInteraction)
             {
+                currentInteraction = detectedInteraction;
+
                 if (interactionPrompt != null)
                     interactionPrompt.SetActive(true);
 
                 if (promptText != null)
-                    promptText.text =
-                        currentInteraction.interactionText;
+                    promptText.text = currentInteraction.interactionText;
             }
-            else
+        }
+        else if (currentInteraction != null)
+        {
+            framesWithoutTarget++;
+
+            if (framesWithoutTarget >= loseTargetFrameThreshold)
             {
+                currentInteraction = null;
+
                 if (interactionPrompt != null)
                     interactionPrompt.SetActive(false);
             }
@@ -70,16 +78,16 @@ public class InteractionDetector : MonoBehaviour
         if (currentInteraction != null)
         {
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
-{
-    Debug.Log("Why you lookin here bru");
-    currentInteraction.Interact();
-}
+            {
+                currentInteraction.Interact();
+            }
         }
     }
 
     public void HidePrompt()
     {
         currentInteraction = null;
+        framesWithoutTarget = 0;
 
         if (interactionPrompt != null)
             interactionPrompt.SetActive(false);
