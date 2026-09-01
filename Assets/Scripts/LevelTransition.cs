@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
 public class LevelTransition : MonoBehaviour
@@ -15,6 +16,10 @@ public class LevelTransition : MonoBehaviour
 
     [Header("Soundrh")]
     public AudioSource transitionSound;
+
+    [Header("Fade")]
+    public Image fadeImage;
+    public float fadeOutDuration = 1f;
 
     private bool triggered = false;
 
@@ -66,6 +71,31 @@ public class LevelTransition : MonoBehaviour
             transitionSound.Play();
         }
 
+        if (fadeImage != null)
+        {
+            yield return StartCoroutine(FadeOut());
+        }
+
         SceneManager.LoadScene(targetSceneName);
+    }
+
+    IEnumerator FadeOut()
+    {
+        float elapsed = 0f;
+        Color color = fadeImage.color;
+
+        while (elapsed < fadeOutDuration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float t = Mathf.Clamp01(elapsed / fadeOutDuration);
+
+            color.a = t;
+            fadeImage.color = color;
+
+            yield return null;
+        }
+
+        color.a = 1f;
+        fadeImage.color = color;
     }
 }

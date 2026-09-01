@@ -4,8 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerWalkingAudio : MonoBehaviour
 {
     public CharacterController controller;
+    public int loseSurfaceFrameThreshold = 5;
 
     private WalkingSounds currentSurface;
+    private int framesWithoutSurface = 0;
 
     void Start()
     {
@@ -28,7 +30,13 @@ public class PlayerWalkingAudio : MonoBehaviour
 
         if (!moving || !controller.isGrounded)
         {
-            StopCurrentSurface();
+            framesWithoutSurface++;
+
+            if (framesWithoutSurface >= loseSurfaceFrameThreshold)
+            {
+                StopCurrentSurface();
+            }
+
             return;
         }
 
@@ -36,6 +44,8 @@ public class PlayerWalkingAudio : MonoBehaviour
 
         if (surface != null)
         {
+            framesWithoutSurface = 0;
+
             if (currentSurface != surface)
             {
                 StopCurrentSurface();
@@ -43,14 +53,15 @@ public class PlayerWalkingAudio : MonoBehaviour
                 currentSurface = surface;
                 currentSurface.StartWalking();
             }
-            else
-            {
-                currentSurface.StartWalking();
-            }
         }
         else
         {
-            StopCurrentSurface();
+            framesWithoutSurface++;
+
+            if (framesWithoutSurface >= loseSurfaceFrameThreshold)
+            {
+                StopCurrentSurface();
+            }
         }
     }
 
@@ -77,5 +88,7 @@ public class PlayerWalkingAudio : MonoBehaviour
             currentSurface.StopWalking();
             currentSurface = null;
         }
+
+        framesWithoutSurface = 0;
     }
 }

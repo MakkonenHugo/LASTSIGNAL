@@ -57,9 +57,6 @@ public class InteractionDetector : MonoBehaviour
 
                 if (interactionPrompt != null)
                     interactionPrompt.SetActive(true);
-
-                if (promptText != null)
-                    promptText.text = currentInteraction.interactionText;
             }
         }
         else if (currentInteraction != null)

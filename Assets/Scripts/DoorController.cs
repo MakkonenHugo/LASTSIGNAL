@@ -10,6 +10,8 @@ public class DoorController : MonoBehaviour
     private bool isMoving;
     private bool isUnlocked;
 
+    public bool IsUnlocked => isUnlocked;
+
     public void UnlockDoor()
     {
         isUnlocked = true;

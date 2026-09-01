@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class Interaction : MonoBehaviour
 {
-    [Header("Interaction")]
-    public string interactionText = "";
-
     [Header("Dialogue")]
     public List<string> messages = new List<string>();
 
@@ -14,6 +11,13 @@ public class Interaction : MonoBehaviour
     public RadioEvent radioEvent;
     public DoorController doorController;
     public ChairEvent chairEvent;
+    public VanishWhenUnobserved vanishOnFinish;
+    public SpawnWhenTriggered spawnOnFinish;
+
+    [Header("Completion")]
+    public InteractionMessageManager messageManager;
+
+    private const string lockedDoorMessage = "The door is locked";
 
     private bool interacting = false;
 
@@ -21,10 +25,6 @@ public class Interaction : MonoBehaviour
     {
         if (interacting)
             return;
-
-        // =========================
-        // CHAIR EVENT
-        // =========================
 
         if (chairEvent != null)
         {
@@ -35,12 +35,14 @@ public class Interaction : MonoBehaviour
             return;
         }
 
-        // =========================
-        // DOOR
-        // =========================
-
         if (doorController != null)
         {
+            if (!doorController.IsUnlocked)
+            {
+                StartCoroutine(PlayLockedDoorMessage());
+                return;
+            }
+
             interacting = true;
 
             doorController.OpenDoor();
@@ -49,10 +51,6 @@ public class Interaction : MonoBehaviour
 
             return;
         }
-
-        // =========================
-        // RADIO EVENT
-        // =========================
 
         if (radioEvent != null)
         {
@@ -63,14 +61,29 @@ public class Interaction : MonoBehaviour
             return;
         }
 
-        // =========================
-        // NORMAL DIALOGUE
-        // =========================
-
         if (messages.Count > 0)
         {
             StartCoroutine(PlayDialogue());
         }
+    }
+
+    IEnumerator PlayLockedDoorMessage()
+    {
+        interacting = true;
+
+        DialogueUI dialogueUI = FindAnyObjectByType<DialogueUI>();
+
+        if (dialogueUI == null)
+        {
+            interacting = false;
+            yield break;
+        }
+
+        dialogueUI.ShowMessage(lockedDoorMessage);
+
+        yield return new WaitUntil(() => !dialogueUI.IsShowing);
+
+        interacting = false;
     }
 
     IEnumerator PlayDialogue()
@@ -98,6 +111,21 @@ public class Interaction : MonoBehaviour
         }
 
         interacting = false;
+
+        if (messageManager != null)
+{
+    messageManager.InteractionCompleted();
+}
+
+        if (vanishOnFinish != null)
+        {
+            vanishOnFinish.Arm();
+        }
+
+        if (spawnOnFinish != null)
+        {
+            spawnOnFinish.Trigger();
+        }
     }
 
     public void FinishInteraction()

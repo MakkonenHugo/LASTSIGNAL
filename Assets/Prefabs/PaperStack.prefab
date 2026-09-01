@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2830061061694497880
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.033675
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4631532
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.633175
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357118449180629203, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      propertyPath: m_Name
+      value: PaperStack
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 443957845996838811}
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5725848911058673081}
+  m_SourcePrefab: {fileID: 8686905464242370237, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+--- !u!1 &1959626238482021515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: b97f3aebb6c1ce644a9b316a74c6c93a, type: 3}
+  m_PrefabInstance: {fileID: 2830061061694497880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &443957845996838811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959626238482021515}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3, y: 0.5, z: 1}
+  m_Center: {x: 0.1, y: 0.2, z: 0}
+--- !u!114 &5725848911058673081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959626238482021515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
+  messages:
+  - Its an bunch of papers...
+  - They are written in an language you dont recognize?
+  radioEvent: {fileID: 0}
+  doorController: {fileID: 0}
+  chairEvent: {fileID: 0}
+  vanishOnFinish: {fileID: 0}
