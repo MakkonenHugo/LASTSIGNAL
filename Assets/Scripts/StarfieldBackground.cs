@@ -15,7 +15,6 @@ public class StarfieldBackground : MonoBehaviour
     public float twinkleSpeedMax = 1.8f;
     public float twinkleMinAlpha = 0.15f;
     public float twinkleMaxAlpha = 1f;
-
     public int shootingStarChanceRolls = 1;
     [Range(0f, 1f)] public float shootingStarChancePerSecond = 0.15f;
     public float shootingStarSpeed = 700f;

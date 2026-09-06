@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (DoorCodePanel.IsAnyPanelOpen)
+        return;
         Vector2 input = Vector2.zero;
 
         if (Keyboard.current != null)

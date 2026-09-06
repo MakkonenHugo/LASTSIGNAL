@@ -32,6 +32,8 @@ public class CameraOverlayHUD : MonoBehaviour
     [Range(0f, 0.15f)] public float scanlineAlpha = 0.05f;
     public int scanlineCount = 120;
 
+    public PauseMenu pauseMenu;
+
     private TMP_Text recText;
     private Image recDot;
     private TMP_Text timerText;
@@ -42,6 +44,9 @@ public class CameraOverlayHUD : MonoBehaviour
 
     void Awake()
     {
+        if (pauseMenu == null)
+            pauseMenu = FindAnyObjectByType<PauseMenu>();
+
         BuildRecIndicator();
         BuildTimer();
         BuildBatteryIcon();
@@ -51,7 +56,12 @@ public class CameraOverlayHUD : MonoBehaviour
 
     void Update()
     {
-        elapsedTime += Time.unscaledDeltaTime;
+        bool paused = pauseMenu != null && pauseMenu.IsPaused();
+
+        if (!paused)
+        {
+            elapsedTime += Time.unscaledDeltaTime;
+        }
 
         if (showRecIndicator && recDot != null)
         {

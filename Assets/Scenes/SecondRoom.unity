@@ -346,17 +346,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &27174936 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9222523180932586777, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-  m_PrefabInstance: {fileID: 368821153}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &109762686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,111 +910,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &368821153
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353537940053005795, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4419415786962675765, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4939335127093709383, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205162657142163819, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
 --- !u!1001 &391042302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1160,13 +1044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739c25cd5ecaf05429b6b10b61c9076b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadioEvent
-  dialogueUI: {fileID: 0}
-  interactionDetector: {fileID: 0}
+  dialogueUI: {fileID: 1867661057}
+  interactionDetector: {fileID: 1299039714}
   messages:
   - CRRRRRZZZZZZZ-
   - Phew, that was weird...
   - HEY LISTENER!!
-  - DONT. TRUST. JEFF.
+  - THIS PLACE ISNT SAFE
   - I THINK YOU SHOULD FIND TH-
   - CRRRRRZZZZZZZ-
   jeff: {fileID: 1141088650}
@@ -1240,13 +1124,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &503062827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: 7b70c70fdc31d7d4899581a1f8de1e41, type: 3}
@@ -1270,7 +1160,7 @@ MonoBehaviour:
   position3: {fileID: 1900537792}
   lookAwayAngle: 70
   moveDelay: 0.5
-  dialogueUI: {fileID: 1462505247}
+  dialogueUI: {fileID: 1867661057}
   firstMessage: Huh...
   secondMessage: Something feels wrong about this chair.
 --- !u!114 &503062830
@@ -1285,13 +1175,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Its an weirdahh chair bru
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 503062828}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &503062831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1626,7 +1522,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622236758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1832,13 +1728,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &880360341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,11 +1992,6 @@ Transform:
   - {fileID: 1548747540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &950330672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 597918952955589465, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-  m_PrefabInstance: {fileID: 368821153}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &986072070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: a27b46d7bbed69248acbd1cf83fc0418, type: 3}
@@ -2112,6 +2009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Its an big door...
   - Its not leading anywhere?
@@ -2120,9 +2018,14 @@ MonoBehaviour:
   - What is this place?
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &986072073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2620,15 +2523,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Its an bed...
   - If you slept you might never wake up
   - You feel an cold chill thinking about it
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1161932384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2807,12 +2716,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages: []
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1268347775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,11 +2892,11 @@ PrefabInstance:
     - target: {fileID: 8515819900809412159, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
       propertyPath: promptText
       value: 
-      objectReference: {fileID: 27174936}
+      objectReference: {fileID: 1867661058}
     - target: {fileID: 8515819900809412159, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
       propertyPath: interactionPrompt
       value: 
-      objectReference: {fileID: 950330672}
+      objectReference: {fileID: 1867661059}
     - target: {fileID: 8698822975213917411, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
       propertyPath: m_TagString
       value: MainCamera
@@ -2991,6 +2906,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
+--- !u!114 &1299039714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8515819900809412159, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
+  m_PrefabInstance: {fileID: 1299039713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53174e502c84a184caba2f9ca58b4da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionDetector
+--- !u!114 &1299039715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7504579785526721717, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
+  m_PrefabInstance: {fileID: 1299039713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ca54c017417d541a4c2ba9bb50dedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeadBob
+--- !u!114 &1299039716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2015834839802910458, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
+  m_PrefabInstance: {fileID: 1299039713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e20245626e15848a1eeef150f7f6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseLook
 --- !u!1 &1314659983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3297,24 +3245,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
---- !u!114 &1462505247 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4521745796238003547, guid: f4585ac7c4e9bce449c5f7f863178431, type: 3}
-  m_PrefabInstance: {fileID: 368821153}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20971f7e76666d04b8a4df1607cd624f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueUI
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1466152633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3515,13 +3458,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   doorController: {fileID: 0}
+  hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1548747539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,6 +4081,158 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &1867661056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 432770105009314735, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481308982042691927, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960658229210546680, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373258885714126183, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: headBob
+      value: 
+      objectReference: {fileID: 1299039715}
+    - target: {fileID: 3373258885714126183, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: mouseLook
+      value: 
+      objectReference: {fileID: 1299039716}
+    - target: {fileID: 3373258885714126183, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: maxSensitivity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546315602430555059, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102247191463591783, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476099311955524342, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+--- !u!114 &1867661057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5300256200432720206, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+  m_PrefabInstance: {fileID: 1867661056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20971f7e76666d04b8a4df1607cd624f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueUI
+--- !u!114 &1867661058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2386487167796575948, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+  m_PrefabInstance: {fileID: 1867661056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1867661059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2993016880758798440, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+  m_PrefabInstance: {fileID: 1867661056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1888859429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4630,9 +4731,9 @@ SceneRoots:
   - {fileID: 203844589}
   - {fileID: 1299039713}
   - {fileID: 589174015}
+  - {fileID: 1867661056}
   - {fileID: 928359519}
   - {fileID: 678656673}
-  - {fileID: 368821153}
   - {fileID: 1888859429}
   - {fileID: 622236762}
   - {fileID: 2107355679}

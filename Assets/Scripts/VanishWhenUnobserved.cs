@@ -4,15 +4,23 @@ using System.Collections.Generic;
 
 public class VanishWhenUnobserved : MonoBehaviour
 {
-    public List<GameObject> objectsToVanish = new List<GameObject>();
+    [Header("Objects That Vanish Immediately")]
+    public List<GameObject> objectsThatVanishImmediately = new List<GameObject>();
 
+    [Header("Objects That Vanish After")]
+    public List<GameObject> objectsThatVanishAfter = new List<GameObject>();
+
+    [Header("Vanish Settings")]
     public float vanishDelay = 1f;
     public float viewAngleThreshold = 15f;
 
     private Camera playerCamera;
-    private Interaction interaction;
-    private bool armed = false;
-    private List<VanishState> states = new List<VanishState>();
+
+    private bool immediateArmed = false;
+    private bool afterArmed = false;
+
+    private List<VanishState> immediateStates = new List<VanishState>();
+    private List<VanishState> afterStates = new List<VanishState>();
 
     private class VanishState
     {
@@ -23,63 +31,127 @@ public class VanishWhenUnobserved : MonoBehaviour
 
     void Start()
     {
-        interaction = GetComponent<Interaction>();
         playerCamera = Camera.main;
 
-        foreach (GameObject obj in objectsToVanish)
+        foreach (GameObject obj in objectsThatVanishImmediately)
         {
             if (obj != null)
             {
-                states.Add(new VanishState { obj = obj, vanished = false, routine = null });
+                immediateStates.Add(new VanishState
+                {
+                    obj = obj,
+                    vanished = false,
+                    routine = null
+                });
+            }
+        }
+
+        foreach (GameObject obj in objectsThatVanishAfter)
+        {
+            if (obj != null)
+            {
+                afterStates.Add(new VanishState
+                {
+                    obj = obj,
+                    vanished = false,
+                    routine = null
+                });
             }
         }
     }
 
     public void Arm()
     {
-        armed = true;
+        immediateArmed = true;
+    }
+
+    public void ArmAfter()
+    {
+        afterArmed = true;
     }
 
     void Update()
     {
-        if (!armed || playerCamera == null)
+        if (playerCamera == null)
             return;
 
-        foreach (VanishState state in states)
+        if (immediateArmed)
         {
-            if (state.vanished || state.obj == null)
-                continue;
-
-            bool isBeingViewed = IsObjectBeingViewed(state.obj);
-
-            if (!isBeingViewed && state.routine == null)
+            foreach (VanishState state in immediateStates)
             {
-                state.routine = StartCoroutine(VanishAfterDelay(state));
+                CheckVanishState(state);
             }
-            else if (isBeingViewed && state.routine != null)
+        }
+
+        if (afterArmed)
+        {
+            foreach (VanishState state in afterStates)
+            {
+                CheckVanishState(state);
+            }
+        }
+    }
+
+    void CheckVanishState(VanishState state)
+    {
+        if (state.vanished || state.obj == null)
+            return;
+
+        bool isBeingViewed = IsObjectBeingViewed(state.obj);
+
+        if (isBeingViewed)
+        {
+            if (state.routine != null)
             {
                 StopCoroutine(state.routine);
                 state.routine = null;
+            }
+        }
+        else
+        {
+            if (state.routine == null)
+            {
+                state.routine = StartCoroutine(
+                    VanishAfterDelay(state)
+                );
             }
         }
     }
 
     bool IsObjectBeingViewed(GameObject obj)
     {
-        Vector3 directionToObject = (obj.transform.position - playerCamera.transform.position).normalized;
-        float angle = Vector3.Angle(playerCamera.transform.forward, directionToObject);
+        Vector3 directionToObject =
+            (obj.transform.position -
+             playerCamera.transform.position).normalized;
+
+        float angle =
+            Vector3.Angle(
+                playerCamera.transform.forward,
+                directionToObject
+            );
 
         if (angle > viewAngleThreshold)
             return false;
 
         RaycastHit hit;
-        Vector3 origin = playerCamera.transform.position;
-        Vector3 target = obj.transform.position;
-        float distance = Vector3.Distance(origin, target);
 
-        if (Physics.Raycast(origin, (target - origin).normalized, out hit, distance))
+        Vector3 origin =
+            playerCamera.transform.position;
+
+        Vector3 target =
+            obj.transform.position;
+
+        float distance =
+            Vector3.Distance(origin, target);
+
+        if (Physics.Raycast(
+            origin,
+            (target - origin).normalized,
+            out hit,
+            distance))
         {
-            if (hit.collider.gameObject != obj && hit.collider.transform.root.gameObject != obj)
+            if (hit.collider.gameObject != obj &&
+                hit.collider.transform.root.gameObject != obj)
             {
                 return false;
             }

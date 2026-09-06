@@ -35,6 +35,15 @@ public class DoorController : MonoBehaviour
         }
     }
 
+    public void ForceClose()
+    {
+        if (!isOpen)
+            return;
+
+        StopAllCoroutines();
+        StartCoroutine(Close());
+    }
+
     IEnumerator Open()
     {
         isMoving = true;

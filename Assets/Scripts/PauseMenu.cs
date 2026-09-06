@@ -14,6 +14,17 @@ public class PauseMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public string volumeParameterName = "MasterVolume";
 
+    public Toggle crosshairToggle;
+    public Crosshair crosshair;
+
+    public Slider sensitivitySlider;
+    public MouseLook mouseLook;
+    public float minSensitivity = 0.5f;
+    public float maxSensitivity = 10f;
+
+    public Toggle headBobToggle;
+    public HeadBob headBob;
+
     private bool isPaused = false;
 
     void Start()
@@ -33,6 +44,46 @@ public class PauseMenu : MonoBehaviour
             volumeSlider.value = savedVolume;
             SetVolume(savedVolume);
             volumeSlider.onValueChanged.AddListener(SetVolume);
+        }
+
+        if (crosshair == null)
+            crosshair = FindAnyObjectByType<Crosshair>();
+
+        bool savedCrosshairEnabled = PlayerPrefs.GetInt("CrosshairEnabled", 1) == 1;
+        ApplyCrosshairState(savedCrosshairEnabled);
+
+        if (crosshairToggle != null)
+        {
+            crosshairToggle.isOn = savedCrosshairEnabled;
+            crosshairToggle.onValueChanged.AddListener(SetCrosshairEnabled);
+        }
+
+        if (mouseLook == null)
+            mouseLook = FindAnyObjectByType<MouseLook>();
+
+        if (sensitivitySlider != null)
+        {
+            sensitivitySlider.minValue = minSensitivity;
+            sensitivitySlider.maxValue = maxSensitivity;
+
+            float defaultSensitivity = mouseLook != null ? mouseLook.sensitivity : 2f;
+            float savedSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", defaultSensitivity);
+
+            sensitivitySlider.value = savedSensitivity;
+            SetSensitivity(savedSensitivity);
+            sensitivitySlider.onValueChanged.AddListener(SetSensitivity);
+        }
+
+        if (headBob == null)
+            headBob = FindAnyObjectByType<HeadBob>();
+
+        bool savedHeadBobEnabled = PlayerPrefs.GetInt("HeadBobEnabled", 1) == 1;
+        ApplyHeadBobState(savedHeadBobEnabled);
+
+        if (headBobToggle != null)
+        {
+            headBobToggle.isOn = savedHeadBobEnabled;
+            headBobToggle.onValueChanged.AddListener(SetHeadBobEnabled);
         }
     }
 
@@ -99,6 +150,38 @@ public class PauseMenu : MonoBehaviour
         {
             AudioListener.volume = value;
         }
+    }
+
+    public void SetCrosshairEnabled(bool enabled)
+    {
+        PlayerPrefs.SetInt("CrosshairEnabled", enabled ? 1 : 0);
+        ApplyCrosshairState(enabled);
+    }
+
+    void ApplyCrosshairState(bool enabled)
+    {
+        if (crosshair != null)
+            crosshair.gameObject.SetActive(enabled);
+    }
+
+    public void SetSensitivity(float value)
+    {
+        PlayerPrefs.SetFloat("MouseSensitivity", value);
+
+        if (mouseLook != null)
+            mouseLook.sensitivity = value;
+    }
+
+    public void SetHeadBobEnabled(bool enabled)
+    {
+        PlayerPrefs.SetInt("HeadBobEnabled", enabled ? 1 : 0);
+        ApplyHeadBobState(enabled);
+    }
+
+    void ApplyHeadBobState(bool enabled)
+    {
+        if (headBob != null)
+            headBob.enabled = enabled;
     }
 
     public void QuitGame()

@@ -48,7 +48,7 @@ public class RadioEvent : MonoBehaviour
 
         if (interactionDetector != null)
         {
-            interactionDetector.HidePrompt();
+            interactionDetector.SuppressPrompt();
         }
 
         StartCoroutine(PlayMessages());
@@ -60,6 +60,11 @@ public class RadioEvent : MonoBehaviour
 
         if (dialogueUI == null)
         {
+            if (interactionDetector != null)
+            {
+                interactionDetector.ResumePrompt();
+            }
+
             playing = false;
             yield break;
         }
@@ -70,7 +75,9 @@ public class RadioEvent : MonoBehaviour
                 continue;
 
             dialogueUI.ShowMessage(message);
+
             yield return new WaitUntil(() => !dialogueUI.IsShowing);
+
             yield return new WaitForSeconds(delayBetweenMessages);
         }
 
@@ -88,6 +95,11 @@ public class RadioEvent : MonoBehaviour
         {
             doorController.enabled = true;
             doorController.UnlockDoor();
+        }
+
+        if (interactionDetector != null)
+        {
+            interactionDetector.ResumePrompt();
         }
 
         playing = false;
