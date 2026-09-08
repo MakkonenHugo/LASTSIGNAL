@@ -19,7 +19,10 @@ public class HackingPanel : MonoBehaviour
     public GameObject lockoutHudRoot;
     public TMP_Text lockoutHudText;
 
+    [Header("Success Behaviour")]
+    public bool useDirectDoorUnlock = true;
     public DoorController doorController;
+    public int revealedCode = 63;
 
     public int requiredStreak = 10;
     public int easyPhaseEnd = 3;
@@ -37,6 +40,7 @@ public class HackingPanel : MonoBehaviour
     public float lockoutDuration = 60f;
     public float resultMessageDuration = 1f;
     public float closeDelayOnSuccess = 0.8f;
+    public float closeDelayOnCodeReveal = 2f;
 
     public static bool IsAnyPanelOpen { get; private set; } = false;
 
@@ -239,15 +243,24 @@ public class HackingPanel : MonoBehaviour
     {
         inputLocked = true;
 
-        ShowFeedback("ACCESS GRANTED", true);
-
-        if (doorController != null)
+        if (useDirectDoorUnlock)
         {
-            doorController.UnlockDoor();
-            doorController.OpenDoor();
-        }
+            ShowFeedback("ACCESS GRANTED", true);
 
-        StartCoroutine(CloseAfterDelay(closeDelayOnSuccess));
+            if (doorController != null)
+            {
+                doorController.UnlockDoor();
+                doorController.OpenDoor();
+            }
+
+            StartCoroutine(CloseAfterDelay(closeDelayOnSuccess));
+        }
+        else
+        {
+            ShowFeedback("ACCESS GRANTED - CODE: " + revealedCode, true);
+
+            StartCoroutine(CloseAfterDelay(closeDelayOnCodeReveal));
+        }
     }
 
     void HandleMiss()
@@ -299,7 +312,8 @@ public class HackingPanel : MonoBehaviour
         feedbackText.text = message;
         feedbackText.color = success ? new Color(0.4f, 1f, 0.5f) : new Color(1f, 0.3f, 0.3f);
 
-        feedbackRoutine = StartCoroutine(ClearFeedbackAfterDelay());
+        if (!success)
+            feedbackRoutine = StartCoroutine(ClearFeedbackAfterDelay());
     }
 
     IEnumerator ClearFeedbackAfterDelay()

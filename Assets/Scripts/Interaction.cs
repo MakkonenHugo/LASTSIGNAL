@@ -13,10 +13,13 @@ public class Interaction : MonoBehaviour
 
     [Header("Special Events")]
     public RadioEvent radioEvent;
+    public Level8Controller level8Controller;
     public DoorController doorController;
+    public DoorController2 doorController2;
     public HackingPanel hackingPanel;
     public ChairEvent chairEvent;
     public SurveillanceMonitorPanel monitorPanel;
+    public PasswordMemoryPanel passwordPanel;
     public VanishWhenUnobserved vanishOnFinish;
     public SpawnWhenTriggered spawnOnFinish;
 
@@ -26,7 +29,6 @@ public class Interaction : MonoBehaviour
 
     private const string lockedDoorMessage = "The door is locked";
     private const string systemLockedMessage = "System locked, try again later";
-
     private bool interacting = false;
 
     public void Interact()
@@ -45,10 +47,23 @@ public class Interaction : MonoBehaviour
             chairEvent.StartChairEvent();
             return;
         }
-
         if (monitorPanel != null)
         {
             monitorPanel.OpenPanel();
+            return;
+        }
+
+        if (passwordPanel != null)
+        {
+            passwordPanel.OpenPanel();
+            return;
+        }
+
+        if (doorController2 != null)
+        {
+            interacting = true;
+            doorController2.OpenDoor();
+            interacting = false;
             return;
         }
 
@@ -63,11 +78,9 @@ public class Interaction : MonoBehaviour
                         StartCoroutine(PlayMessage(systemLockedMessage));
                         return;
                     }
-
                     hackingPanel.OpenPanel();
                     return;
                 }
-
                 StartCoroutine(PlayMessage(lockedDoorMessage));
                 return;
             }
@@ -82,6 +95,12 @@ public class Interaction : MonoBehaviour
         {
             interacting = true;
             radioEvent.PlayRadio();
+            return;
+        }
+        if (level8Controller != null)
+        {
+            interacting = true;
+            level8Controller.PlayJeffMessage();
             return;
         }
 
@@ -104,7 +123,6 @@ public class Interaction : MonoBehaviour
         }
 
         InteractionDetector detector = FindAnyObjectByType<InteractionDetector>();
-
         if (detector != null)
             detector.SuppressPrompt();
 
@@ -121,7 +139,6 @@ public class Interaction : MonoBehaviour
     IEnumerator PlayDialogue()
     {
         interacting = true;
-
         DialogueUI dialogueUI = FindAnyObjectByType<DialogueUI>();
 
         if (dialogueUI == null)
@@ -141,9 +158,7 @@ public class Interaction : MonoBehaviour
                 continue;
 
             dialogueUI.ShowMessage(message);
-
             yield return new WaitUntil(() => !dialogueUI.IsShowing);
-
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -161,12 +176,10 @@ public class Interaction : MonoBehaviour
         {
             messageManager.InteractionCompleted();
         }
-
         if (spawnOnFinish != null)
         {
             spawnOnFinish.Trigger();
         }
-
         onMessagesFinished?.Invoke();
     }
 

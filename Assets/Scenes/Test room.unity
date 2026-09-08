@@ -631,9 +631,13 @@ MonoBehaviour:
   - Theres an radio on top of it
   - Nothing else...
   radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -779,9 +783,13 @@ MonoBehaviour:
   - What does "Subject 11" mean?
   - Am i an subject?
   radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -1335,6 +1343,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 8686905464242370237, guid: d662dce82e5947b40b98decef1ffdf69, type: 3}
+--- !u!1001 &769371297
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74206
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5259
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.27226
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597349474335501238, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489448686249799711, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
+      propertyPath: m_Name
+      value: PixelateManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d82493c2710723e48ae6e684c0a654a5, type: 3}
 --- !u!1 &939646777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1931,10 @@ PrefabInstance:
     - target: {fileID: 8476099311955524342, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977600327208975478, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: batteryLevel
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2479,9 +2548,13 @@ MonoBehaviour:
   - Everything is odd now that im thinking about it
   - Where am i?
   radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -2689,9 +2762,13 @@ MonoBehaviour:
   - Its messy
   - It feels like somebody was just here
   radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 1965352672}
   messageManager: {fileID: 0}
@@ -3413,3 +3490,4 @@ SceneRoots:
   - {fileID: 1352154678}
   - {fileID: 2051805652}
   - {fileID: 1409040328}
+  - {fileID: 769371297}

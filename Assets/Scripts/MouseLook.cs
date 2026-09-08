@@ -14,6 +14,11 @@ public class MouseLook : MonoBehaviour
     private int historyIndex = 0;
     private int historyFilled = 0;
 
+    private bool yawLocked = false;
+    private float yawLockCenter = 0f;
+    private float yawLockRange = 90f;
+    private float currentYaw = 0f;
+
     void Awake()
     {
         xRotation = transform.localEulerAngles.x;
@@ -34,6 +39,11 @@ public class MouseLook : MonoBehaviour
 
         for (int i = 0; i < deltaHistory.Length; i++)
             deltaHistory[i] = Vector2.zero;
+
+        if (transform.parent != null)
+        {
+            currentYaw = transform.parent.eulerAngles.y;
+        }
     }
 
     void Update()
@@ -72,10 +82,43 @@ public class MouseLook : MonoBehaviour
 
         if (transform.parent != null)
         {
-            transform.parent.Rotate(
-                Vector3.up * mouseX,
-                Space.World
-            );
+            if (yawLocked)
+            {
+                currentYaw += mouseX;
+
+                float minYaw = yawLockCenter - yawLockRange;
+                float maxYaw = yawLockCenter + yawLockRange;
+                currentYaw = Mathf.Clamp(currentYaw, minYaw, maxYaw);
+
+                Vector3 euler = transform.parent.eulerAngles;
+                transform.parent.rotation = Quaternion.Euler(euler.x, currentYaw, euler.z);
+            }
+            else
+            {
+                currentYaw += mouseX;
+
+                transform.parent.Rotate(
+                    Vector3.up * mouseX,
+                    Space.World
+                );
+            }
         }
+    }
+
+    public void LockYaw(float range = 90f)
+    {
+        yawLocked = true;
+        yawLockRange = range;
+
+        if (transform.parent != null)
+        {
+            yawLockCenter = transform.parent.eulerAngles.y;
+            currentYaw = yawLockCenter;
+        }
+    }
+
+    public void UnlockYaw()
+    {
+        yawLocked = false;
     }
 }

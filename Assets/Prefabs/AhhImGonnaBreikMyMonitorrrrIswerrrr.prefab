@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7110227865729443922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -110.32975
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0595887
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.251652
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194396
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.69455504
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 87.984
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357118449180629203, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      propertyPath: m_Name
+      value: AhhImGonnaBreikMyMonitorrrrIswerrrr
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5384263641256161352}
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4329788426978451421}
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6442435546881463850}
+  m_SourcePrefab: {fileID: 8686905464242370237, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+--- !u!1 &6835059842308468865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: 368ef9f0673262d4e8e1b774dfe0c430, type: 3}
+  m_PrefabInstance: {fileID: 7110227865729443922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5384263641256161352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835059842308468865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.2, z: 1.5}
+  m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &4329788426978451421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835059842308468865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
+  messages:
+  - I need the code for the door...
+  - Lets see if their system has any
+  - vulnerabilities
+  radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
+  doorController: {fileID: 0}
+  doorController2: {fileID: 0}
+  hackingPanel: {fileID: 6442435546881463850}
+  chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
+  vanishOnFinish: {fileID: 0}
+  spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6442435546881463850}
+        m_TargetAssemblyTypeName: HackingPanel, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6442435546881463850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835059842308468865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8328f5e765c19e4e89ef7abdbed5b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HackingPanel
+  panelRoot: {fileID: 0}
+  barTrack: {fileID: 0}
+  movingIndicator: {fileID: 0}
+  successZone: {fileID: 0}
+  feedbackText: {fileID: 0}
+  streakText: {fileID: 0}
+  logText: {fileID: 0}
+  closeButton: {fileID: 0}
+  lockoutHudRoot: {fileID: 0}
+  lockoutHudText: {fileID: 0}
+  useDirectDoorUnlock: 0
+  doorController: {fileID: 0}
+  revealedCode: 63
+  requiredStreak: 10
+  easyPhaseEnd: 3
+  mediumPhaseEnd: 7
+  easySpeed: 220
+  mediumSpeed: 270
+  hardSpeed: 320
+  easyZoneWidth: 110
+  mediumZoneWidth: 90
+  hardZoneWidth: 80
+  maxAttempts: 3
+  lockoutDuration: 60
+  resultMessageDuration: 1
+  closeDelayOnSuccess: 0.8
+  closeDelayOnCodeReveal: 2

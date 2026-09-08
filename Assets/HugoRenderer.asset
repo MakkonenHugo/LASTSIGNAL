@@ -70,4 +70,4 @@ MonoBehaviour:
   m_Active: 1
   pixelateShader: {fileID: 4800000, guid: 6c019929d3bc1074ebd0bf826efea79a, type: 3}
   pixelWidth: 320
-  pixelHeight: 180
+  pixelHeight: 189

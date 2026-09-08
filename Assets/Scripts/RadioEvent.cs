@@ -19,6 +19,8 @@ public class RadioEvent : MonoBehaviour
     [Header("Timing")]
     public float delayBetweenMessages = 0.3f;
 
+    public System.Action OnRadioFinished;
+
     private Interaction interaction;
     private bool hasPlayed = false;
     private bool playing = false;
@@ -48,6 +50,7 @@ public class RadioEvent : MonoBehaviour
 
         if (interactionDetector != null)
         {
+            interactionDetector.HidePrompt();
             interactionDetector.SuppressPrompt();
         }
 
@@ -61,11 +64,10 @@ public class RadioEvent : MonoBehaviour
         if (dialogueUI == null)
         {
             if (interactionDetector != null)
-            {
                 interactionDetector.ResumePrompt();
-            }
 
             playing = false;
+            OnRadioFinished?.Invoke();
             yield break;
         }
 
@@ -75,9 +77,7 @@ public class RadioEvent : MonoBehaviour
                 continue;
 
             dialogueUI.ShowMessage(message);
-
             yield return new WaitUntil(() => !dialogueUI.IsShowing);
-
             yield return new WaitForSeconds(delayBetweenMessages);
         }
 
@@ -98,10 +98,10 @@ public class RadioEvent : MonoBehaviour
         }
 
         if (interactionDetector != null)
-        {
             interactionDetector.ResumePrompt();
-        }
 
         playing = false;
+
+        OnRadioFinished?.Invoke();
     }
 }

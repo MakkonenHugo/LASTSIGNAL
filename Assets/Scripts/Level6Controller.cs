@@ -8,40 +8,38 @@ public class Level6Controller : MonoBehaviour
     public bool triggerOnStart = false;
 
     [Header("Flickering Lights")]
+    public float flickerStartDelay = 0f;
     public List<Light> flickeringLights = new List<Light>();
     public float flickerDuration = 4f;
     public float flickerMinInterval = 0.05f;
     public float flickerMaxInterval = 0.3f;
 
     [Header("Doors")]
+    public float doorSlamStartDelay = 1.5f;
     public List<DoorController> doorsToSlam = new List<DoorController>();
-    public float doorSlamDelay = 1.5f;
 
     [Header("Distant Sounds")]
+    public float distantSoundStartDelay = 2f;
     public AudioSource distantSoundSource;
     public List<AudioClip> distantSounds = new List<AudioClip>();
-    public float distantSoundStartDelay = 2f;
     public float distantSoundInterval = 4f;
     public int distantSoundCount = 3;
 
     [Header("Brief Glimpse")]
+    public float glimpseStartDelay = 5f;
     public GameObject glimpseObject;
-    public float glimpseDelay = 5f;
     public float glimpseVisibleDuration = 0.15f;
 
     [Header("Moving Objects")]
+    public float objectMoveStartDelay = 6f;
     public List<Transform> objectsToMove = new List<Transform>();
-    public float objectMoveDelay = 6f;
     public float objectMoveDistance = 0.5f;
     public float objectMoveDuration = 0.3f;
 
     [Header("Ambient Change")]
+    public float ambientChangeStartDelay = 0.5f;
     public AudioSource ambientSource;
     public AudioClip disturbedAmbientClip;
-    public float ambientChangeDelay = 0.5f;
-
-    [Header("Timing")]
-    public float totalSequenceDuration = 12f;
 
     private bool hasTriggered = false;
 
@@ -59,27 +57,21 @@ public class Level6Controller : MonoBehaviour
             return;
 
         hasTriggered = true;
-        StartCoroutine(RunSequence());
+
+        StartCoroutine(RunDelayed(flickerStartDelay, FlickerLightsRoutine()));
+        StartCoroutine(RunDelayed(ambientChangeStartDelay, SwitchAmbientRoutine()));
+        StartCoroutine(RunDelayed(distantSoundStartDelay, DistantSoundsRoutine()));
+        StartCoroutine(RunDelayed(doorSlamStartDelay, SlamDoorsRoutine()));
+        StartCoroutine(RunDelayed(glimpseStartDelay, GlimpseRoutine()));
+        StartCoroutine(RunDelayed(objectMoveStartDelay, MoveObjectsRoutine()));
     }
 
-    IEnumerator RunSequence()
+    IEnumerator RunDelayed(float delay, IEnumerator routine)
     {
-        StartCoroutine(FlickerLightsRoutine());
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
 
-        yield return new WaitForSeconds(ambientChangeDelay);
-        SwitchAmbient();
-
-        yield return new WaitForSeconds(distantSoundStartDelay - ambientChangeDelay);
-        StartCoroutine(DistantSoundsRoutine());
-
-        yield return new WaitForSeconds(doorSlamDelay - distantSoundStartDelay);
-        SlamDoors();
-
-        yield return new WaitForSeconds(glimpseDelay - doorSlamDelay);
-        StartCoroutine(GlimpseRoutine());
-
-        yield return new WaitForSeconds(objectMoveDelay - glimpseDelay);
-        StartCoroutine(MoveObjectsRoutine());
+        yield return StartCoroutine(routine);
     }
 
     IEnumerator FlickerLightsRoutine()
@@ -119,7 +111,7 @@ public class Level6Controller : MonoBehaviour
         }
     }
 
-    void SwitchAmbient()
+    IEnumerator SwitchAmbientRoutine()
     {
         if (ambientSource != null && disturbedAmbientClip != null)
         {
@@ -127,9 +119,11 @@ public class Level6Controller : MonoBehaviour
             ambientSource.loop = true;
             ambientSource.Play();
         }
+
+        yield break;
     }
 
-    void SlamDoors()
+    IEnumerator SlamDoorsRoutine()
     {
         foreach (DoorController door in doorsToSlam)
         {
@@ -138,6 +132,8 @@ public class Level6Controller : MonoBehaviour
                 door.ForceClose();
             }
         }
+
+        yield break;
     }
 
     IEnumerator DistantSoundsRoutine()
