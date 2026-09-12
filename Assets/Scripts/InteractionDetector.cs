@@ -100,8 +100,14 @@ public class InteractionDetector : MonoBehaviour
                 detectedInteraction = newInteraction;
                 framesWithNewTarget = 0;
 
-                if (!promptSuppressed && interactionPrompt != null)
-                    interactionPrompt.SetActive(true);
+                if (!promptSuppressed)
+                {
+                    if (interactionPrompt != null)
+                        interactionPrompt.SetActive(true);
+
+                    if (promptText != null)
+                        promptText.text = currentInteraction.interactionText;
+                }
             }
             else
             {

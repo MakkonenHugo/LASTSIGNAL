@@ -12,6 +12,7 @@ public class RadioEvent : MonoBehaviour
 
     [Header("Optional Events")]
     public GameObject jeff;
+    public VanishWhenUnobserved jeffVanish;
     public Collider doorCollider;
     public DoorController doorController;
     public Level3RadioEvent level3Event;
@@ -81,7 +82,11 @@ public class RadioEvent : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenMessages);
         }
 
-        if (jeff != null)
+        if (jeffVanish != null)
+        {
+            jeffVanish.Arm();
+        }
+        else if (jeff != null)
         {
             jeff.SetActive(false);
         }

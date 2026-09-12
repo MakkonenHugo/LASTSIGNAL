@@ -8,6 +8,10 @@ public class Interaction : MonoBehaviour
     [Header("Interaction")]
     public string interactionText = "Press E to interact";
 
+    [Header("Interact Sound")]
+    public AudioClip interactSound;
+    [Range(0f, 1f)] public float interactSoundVolume = 1f;
+
     [Header("Dialogue")]
     public List<string> messages = new List<string>();
 
@@ -15,11 +19,14 @@ public class Interaction : MonoBehaviour
     public RadioEvent radioEvent;
     public Level8Controller level8Controller;
     public DoorController doorController;
+    public DoorLevelTransition doorLevelTransition;
     public DoorController2 doorController2;
     public HackingPanel hackingPanel;
     public ChairEvent chairEvent;
     public SurveillanceMonitorPanel monitorPanel;
     public PasswordMemoryPanel passwordPanel;
+    public FakeOSTerminal fakeOSTerminal;
+    public BurnItDownTrigger burnTrigger;
     public VanishWhenUnobserved vanishOnFinish;
     public SpawnWhenTriggered spawnOnFinish;
 
@@ -29,12 +36,15 @@ public class Interaction : MonoBehaviour
 
     private const string lockedDoorMessage = "The door is locked";
     private const string systemLockedMessage = "System locked, try again later";
+
     private bool interacting = false;
 
     public void Interact()
     {
         if (interacting)
             return;
+
+        PlayInteractSound();
 
         if (vanishOnFinish != null)
         {
@@ -47,6 +57,7 @@ public class Interaction : MonoBehaviour
             chairEvent.StartChairEvent();
             return;
         }
+
         if (monitorPanel != null)
         {
             monitorPanel.OpenPanel();
@@ -59,11 +70,35 @@ public class Interaction : MonoBehaviour
             return;
         }
 
+        if (fakeOSTerminal != null)
+        {
+            fakeOSTerminal.OpenPanel();
+            return;
+        }
+
+        if (burnTrigger != null)
+        {
+            burnTrigger.OnBurnInteract();
+            return;
+        }
+
         if (doorController2 != null)
         {
             interacting = true;
             doorController2.OpenDoor();
             interacting = false;
+            return;
+        }
+
+        if (doorLevelTransition != null)
+        {
+            if (!doorLevelTransition.CanOpen)
+            {
+                StartCoroutine(PlayMessage(lockedDoorMessage));
+                return;
+            }
+
+            doorLevelTransition.TryOpenAndTransition();
             return;
         }
 
@@ -78,9 +113,11 @@ public class Interaction : MonoBehaviour
                         StartCoroutine(PlayMessage(systemLockedMessage));
                         return;
                     }
+
                     hackingPanel.OpenPanel();
                     return;
                 }
+
                 StartCoroutine(PlayMessage(lockedDoorMessage));
                 return;
             }
@@ -97,6 +134,7 @@ public class Interaction : MonoBehaviour
             radioEvent.PlayRadio();
             return;
         }
+
         if (level8Controller != null)
         {
             interacting = true;
@@ -108,6 +146,14 @@ public class Interaction : MonoBehaviour
         {
             StartCoroutine(PlayDialogue());
         }
+    }
+
+    void PlayInteractSound()
+    {
+        if (interactSound == null)
+            return;
+
+        AudioSource.PlayClipAtPoint(interactSound, transform.position, interactSoundVolume);
     }
 
     IEnumerator PlayMessage(string message)
@@ -123,6 +169,7 @@ public class Interaction : MonoBehaviour
         }
 
         InteractionDetector detector = FindAnyObjectByType<InteractionDetector>();
+
         if (detector != null)
             detector.SuppressPrompt();
 
@@ -139,6 +186,7 @@ public class Interaction : MonoBehaviour
     IEnumerator PlayDialogue()
     {
         interacting = true;
+
         DialogueUI dialogueUI = FindAnyObjectByType<DialogueUI>();
 
         if (dialogueUI == null)
@@ -158,7 +206,9 @@ public class Interaction : MonoBehaviour
                 continue;
 
             dialogueUI.ShowMessage(message);
+
             yield return new WaitUntil(() => !dialogueUI.IsShowing);
+
             yield return new WaitForSeconds(0.1f);
         }
 
@@ -176,10 +226,12 @@ public class Interaction : MonoBehaviour
         {
             messageManager.InteractionCompleted();
         }
+
         if (spawnOnFinish != null)
         {
             spawnOnFinish.Trigger();
         }
+
         onMessagesFinished?.Invoke();
     }
 

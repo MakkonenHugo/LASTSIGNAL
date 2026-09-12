@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6889844296248448381
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.918303
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5881529
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.152048
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8791788
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.47649196
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 56.913
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500460014136483016, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357118449180629203, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      propertyPath: m_Name
+      value: Mug
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5395670542674691959}
+    - targetCorrespondingSourceObject: {fileID: 4357118449180629203, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6621098432711714043}
+  m_SourcePrefab: {fileID: 8686905464242370237, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+--- !u!1 &7199633778964532654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4357118449180629203, guid: f0307238485852f44abd14d9c5dc6f8d, type: 3}
+  m_PrefabInstance: {fileID: 6889844296248448381}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5395670542674691959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199633778964532654}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 1, z: 0.8}
+  m_Center: {x: 0, y: 0.4, z: -0.1}
+--- !u!114 &6621098432711714043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199633778964532654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
+  interactSound: {fileID: 8300000, guid: 16d70496b1444e842a361645acf353f8, type: 3}
+  interactSoundVolume: 0.813
+  messages:
+  - Its an coffee mug...
+  - Its empty, but there was coffee here
+  radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
+  doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
+  doorController2: {fileID: 0}
+  hackingPanel: {fileID: 0}
+  chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
+  vanishOnFinish: {fileID: 0}
+  spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []

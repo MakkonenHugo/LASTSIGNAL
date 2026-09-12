@@ -939,12 +939,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
+      propertyPath: interactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 16d70496b1444e842a361645acf353f8, type: 3}
+    - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: doorController
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: interactionText
-      value: 
+      value: Press E to interact
       objectReference: {fileID: 0}
     - target: {fileID: 4930517055831265834, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: messages.Array.size
@@ -980,43 +984,43 @@ PrefabInstance:
       objectReference: {fileID: 1141088650}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.2749
+      value: 27.513
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.461
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.749403
+      value: -22.494
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.44120365
+      value: -0.44141522
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.011251038
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.89740705
+      value: 0.89678144
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.028444221
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 2.355
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 232.361
+      value: 232.468
       objectReference: {fileID: 0}
     - target: {fileID: 8101302327116425917, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 2.598
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8091785296816958522, guid: 0d82ddcb517decf4c914d4f289440bbd, type: 3}
@@ -1053,11 +1057,97 @@ MonoBehaviour:
   - THIS PLACE ISNT SAFE
   - I THINK YOU SHOULD FIND TH-
   - CRRRRRZZZZZZZ-
-  jeff: {fileID: 1141088650}
+  jeff: {fileID: 0}
+  jeffVanish: {fileID: 1141088651}
   doorCollider: {fileID: 0}
   doorController: {fileID: 1315992914}
   level3Event: {fileID: 0}
   delayBetweenMessages: 0.3
+--- !u!1001 &410248546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 249198151079083878, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_Name
+      value: Paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: interactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 17025d767783bad4ebd2b26476831d7c, type: 3}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: messages.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: 'messages.Array.data[1]'
+      value: Its written by some gary...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: 'messages.Array.data[2]'
+      value: '"I have been here for 3 hours now"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: 'messages.Array.data[3]'
+      value: '"I have walked around this place for..."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: 'messages.Array.data[4]'
+      value: '"38 times, yet im not hungry or thirsty"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657598589593411815, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: 'messages.Array.data[5]'
+      value: '"This place cannot be real"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.46564
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3223107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.783
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880682755830488911, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6735b43f4d06c3749bc54bd6c7f501ac, type: 3}
 --- !u!1 &452878017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,16 +1215,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -1180,16 +1275,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 8300000, guid: 16d70496b1444e842a361645acf353f8, type: 3}
+  interactSoundVolume: 1
   messages:
   - Its an weirdahh chair bru
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 503062828}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -1215,8 +1315,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 1.5}
-  m_Center: {x: 0, y: 3, z: 0}
+  m_Size: {x: 1.49, y: 3, z: 1.5}
+  m_Center: {x: 0, y: 1.33, z: -0.33}
 --- !u!1 &524931206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,16 +1837,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -2022,6 +2127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 8300000, guid: 16d70496b1444e842a361645acf353f8, type: 3}
+  interactSoundVolume: 1
   messages:
   - Its an big door...
   - Its not leading anywhere?
@@ -2031,11 +2138,14 @@ MonoBehaviour:
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -2128,6 +2238,111 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f1429b66342ba468fca2d1bb889cee, type: 3}
+--- !u!1001 &1027489962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 202276507981343488, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_Name
+      value: Pencil
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.090405
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5098107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.96432
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8103973
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.58588076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201872290795458795, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 202276507981343488, guid: c31e845746940af479b9cbd26c848449, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1027489964}
+  m_SourcePrefab: {fileID: 100100000, guid: c31e845746940af479b9cbd26c848449, type: 3}
+--- !u!1 &1027489963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 202276507981343488, guid: c31e845746940af479b9cbd26c848449, type: 3}
+  m_PrefabInstance: {fileID: 1027489962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027489964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027489963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dadfb72eb5bc8145a634d37f45b177c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction
+  interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
+  messages:
+  - Yes, this pencil has lead.
+  - 'You write on the paper:'
+  - '"This is the second place ive been in"'
+  - '"I keep seeing this radio"'
+  - '"Theres always this figure somewhere"'
+  - '"But i dont think its alive"'
+  - '"But it isnt human, thats sure"'
+  radioEvent: {fileID: 0}
+  level8Controller: {fileID: 0}
+  doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
+  doorController2: {fileID: 0}
+  hackingPanel: {fileID: 0}
+  chairEvent: {fileID: 0}
+  monitorPanel: {fileID: 0}
+  passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
+  vanishOnFinish: {fileID: 0}
+  spawnOnFinish: {fileID: 0}
+  messageManager: {fileID: 0}
+  onMessagesFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1082353275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,8 +2632,8 @@ MonoBehaviour:
   delayBeforeScreen: 1.5
   delayBeforeLevel: 3
   transitionSound: {fileID: 0}
-  fadeImage: {fileID: 0}
-  fadeOutDuration: 1
+  fadeImage: {fileID: 1867661061}
+  fadeOutDuration: 2
 --- !u!65 &1137719918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2465,7 +2680,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.49798
+      value: 62.076866
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2473,11 +2688,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.838928
+      value: -16.38901
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.44193313
+      value: 0.03293719
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2485,7 +2700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.89704794
+      value: -0.9994575
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2497,11 +2712,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -127.545
+      value: -176.225
       objectReference: {fileID: 0}
     - target: {fileID: 141252310480714175, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085576408501705621, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
+      propertyPath: messages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085576408501705621, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
+      propertyPath: 'messages.Array.data[0]'
+      value: Its Jeff...
       objectReference: {fileID: 0}
     - target: {fileID: 8280310156709724756, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
       propertyPath: m_Name
@@ -2510,13 +2733,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8280310156709724756, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1141088651}
   m_SourcePrefab: {fileID: 100100000, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
 --- !u!1 &1141088650 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8280310156709724756, guid: 3aad1365951a3094d9437825a003e4b6, type: 3}
   m_PrefabInstance: {fileID: 1141088649}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1141088651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141088650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a861b855ce2747b4d9b89031ee4b3bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VanishWhenUnobserved
+  objectsThatVanishImmediately:
+  - {fileID: 1141088650}
+  objectsThatVanishAfter: []
+  vanishDelay: 1
+  viewAngleThreshold: 15
 --- !u!20 &1143257533 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1219489886830966693, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
@@ -2540,6 +2783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
   messages:
   - Its an bed...
   - If you slept you might never wake up
@@ -2547,11 +2792,14 @@ MonoBehaviour:
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -2737,15 +2985,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
   messages: []
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -2872,6 +3125,10 @@ PrefabInstance:
     - target: {fileID: 1560784158460052141, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015834839802910458, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
+      propertyPath: smoothingFrameCount
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4547673677435244823, guid: d77ada1a6845c224d9388cb46564ae29, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3084,7 +3341,7 @@ Transform:
   m_GameObject: {fileID: 1314659983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.03275, y: 1.88246, z: -10.30473}
+  m_LocalPosition: {x: 26.99, y: 1.88246, z: -21.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3154,55 +3411,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorPivot
       objectReference: {fileID: 0}
+    - target: {fileID: 7074464249797456551, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
+      propertyPath: m_Size.x
+      value: 2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074464249797456551, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
+      propertyPath: m_Size.y
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074464249797456551, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
+      propertyPath: m_Size.z
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074464249797456551, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
+      propertyPath: m_Center.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074464249797456551, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
+      propertyPath: m_Center.y
+      value: 0.71
+      objectReference: {fileID: 0}
     - target: {fileID: 8130335791358314172, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
       propertyPath: openAngle
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8137490401081451649, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
+      propertyPath: interactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5575ecccde972124ea8da6370a7f0cb3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3879188467845554170, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1315992918}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
 --- !u!114 &1315992914 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8130335791358314172, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
   m_PrefabInstance: {fileID: 1315992913}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315992915}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1edbd0eaaadd31446bb34ae1db13aeff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
---- !u!1 &1315992915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3879188467845554170, guid: 0c310f82a4f6df34da846debd0c72da3, type: 3}
-  m_PrefabInstance: {fileID: 1315992913}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1315992918
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315992915}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5, y: 3, z: 1}
-  m_Center: {x: 1.3, y: -1, z: 0}
 --- !u!1 &1454096317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,16 +3522,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -3487,16 +3744,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactionText: Press E to interact
+  interactSound: {fileID: 0}
+  interactSoundVolume: 1
   messages:
   - Something is keeping you from jumping...
   radioEvent: {fileID: 0}
   level8Controller: {fileID: 0}
   doorController: {fileID: 0}
+  doorLevelTransition: {fileID: 0}
   doorController2: {fileID: 0}
   hackingPanel: {fileID: 0}
   chairEvent: {fileID: 0}
   monitorPanel: {fileID: 0}
   passwordPanel: {fileID: 0}
+  fakeOSTerminal: {fileID: 0}
+  burnTrigger: {fileID: 0}
   vanishOnFinish: {fileID: 0}
   spawnOnFinish: {fileID: 0}
   messageManager: {fileID: 0}
@@ -4221,6 +4483,14 @@ PrefabInstance:
       propertyPath: maxSensitivity
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5300256200432720206, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: typingBlipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a75c7795ed32c94a9305a26fe18ef38, type: 3}
+    - target: {fileID: 5300256200432720206, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      propertyPath: typingAudioSource
+      value: 
+      objectReference: {fileID: 1867661064}
     - target: {fileID: 7546315602430555059, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4244,14 +4514,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1960658229210546680, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1867661064}
   m_SourcePrefab: {fileID: 100100000, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
 --- !u!114 &1867661057 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5300256200432720206, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
   m_PrefabInstance: {fileID: 1867661056}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1867661060}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20971f7e76666d04b8a4df1607cd624f, type: 3}
@@ -4273,17 +4546,130 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2993016880758798440, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
   m_PrefabInstance: {fileID: 1867661056}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1867661063 stripped
+--- !u!1 &1867661060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1960658229210546680, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+  m_PrefabInstance: {fileID: 1867661056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1867661061 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3373258885714126183, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+  m_CorrespondingSourceObject: {fileID: 222728509970869534, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
   m_PrefabInstance: {fileID: 1867661056}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1867661063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3373258885714126183, guid: dda914b8da3c1e041b6e19a6f4a9d607, type: 3}
+  m_PrefabInstance: {fileID: 1867661056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867661060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e0ebfb04022a2848bc7f7e595d215f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+--- !u!82 &1867661064
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867661060}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1888859429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4481,6 +4867,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1941905224
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1301263032116537759, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_Name
+      value: Office desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.84722
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.50981116
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 54.288868
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6896121
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.724179
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -92.801
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995011442298491508, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16d675bed39bbf3458306750decdfb8d, type: 3}
 --- !u!1 &1946855345
 GameObject:
   m_ObjectHideFlags: 0
@@ -4872,3 +5315,6 @@ SceneRoots:
   - {fileID: 452878019}
   - {fileID: 1498401834}
   - {fileID: 1909230935}
+  - {fileID: 1941905224}
+  - {fileID: 410248546}
+  - {fileID: 1027489962}
